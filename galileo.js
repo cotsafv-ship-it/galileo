@@ -1,4 +1,4 @@
-const botToken = "MTE2NzY5MjgxMDM2ODA1NzM1NA.GxPpha.XvdiCHxAyduRSYWqaKPoifW6dTz2to4QjvB8Kk";
+const botToken = "no token for u";
 const channelId = "1167693916779331604";  // Channel ID
 const message = "hi";
 
