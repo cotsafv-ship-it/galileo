@@ -4,6 +4,37 @@ function sine(a ,b ,c , y){ //where in the form of y =a sin(bx) +c for a point o
     return data
 }
 
+
+
+function rangesine(a ,b ,c , limit){ //where in the form of y =a sin(bx) +c and limit of limit of curve
+    console.log("for the curve " + a + "sin(" + b + "x) + " + c + ", ")
+    let y = null
+    for (let i = 0; i <= limit; i = i + 10){
+        i = Math.PI * i/180 //torad
+        y = a * Math.sin(b * i) + c
+        console.log("x:" + i + " " + "y:" + y)
+        i = i/Math.PI * 180 //unpi
+    }
+}
+
+function rangecosine(a ,b ,c , limit){ //where in the form of y =a cos(bx) +c and limit of limit of curve
+    console.log("for the curve " + a + "cos(" + b + "x) + " + c + ", ")
+    let y = null
+    for (let i = 0; i <= limit; i = i + 10){
+        i = Math.PI * i/180 //torad
+        y = a * Math.cos(b * i) + c
+        console.log("x:" + i + " " + "y:" + y)
+        i = i/Math.PI * 180 //unpi
+    }
+}
+
+//test values
+//rangesine(1,2,3,360)
+//rangecosine(1,2,3,360)
+
+
+
+
 function cosine(a ,b ,c , limit){ //where in the form of y =a cos(bx) +c and limit of limit of curve
     console.log("for the curve " + a + "cos(" + b + "x) + " + c + ", ")
     let y
