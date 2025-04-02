@@ -1,13 +1,25 @@
-const botToken = "botoken";
+function sine(a ,b ,c , limit){ //where in the form of y =a sin(bx) +c and limit of limit of curve
+    console.log("for the curve " + a + "sin(" + b + "x) + " + c + ", ")
+    let y = null
+    for (let i = 0; i <= limit; i = i + 10){
+        i = Math.PI * i/180 //torad
+        y = a * Math.sin(b * i) + c
+        console.log("x:" + i + " " + "y:" + y)
+        i = i/Math.PI * 180 //unpi
+    }
+}
 
-var message = "hi";
+function cosine(a ,b ,c , limit){ //where in the form of y =a cos(bx) +c and limit of limit of curve
+    console.log("for the curve " + a + "cos(" + b + "x) + " + c + ", ")
+    let y = null
+    for (let i = 0; i <= limit; i = i + 10){
+        i = Math.PI * i/180 //torad
+        y = a * Math.cos(b * i) + c
+        console.log("x:" + i + " " + "y:" + y)
+        i = i/Math.PI * 180 //unpi
+    }
+}
 
-// Use only the channel ID, not the full URL structure
-fetch(`https://discord.com/api/v10/channels/1167693916779331604/messages`, {
-    method: 'POST',
-    headers: {
-        'Authorization': `Bot ${botToken}`,
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ content: message }),
-}).then(response => response.json()).then(data => console.log(data));
+//test values
+sine(1,2,3,360)
+cosine(1,2,3,360)
