@@ -4,9 +4,9 @@ function rangesine(a ,b ,c , limit){ //where in the form of y =a sin(bx) +c and 
     let y = null
     for (let i = 0; i <= limit; i = i + 10){
         i = Math.PI * i/180 //torad
-        y = a * Math.sin(b * i) + c
+        y =  a * Math.sin(b * i) + c
+        i = Math.round(i/Math.PI * 180) //unpi
         console.log("x:" + i + " " + "y:" + y)
-        i = i/Math.PI * 180 //unpi
     }
 }
 
@@ -16,15 +16,14 @@ function rangecosine(a ,b ,c , limit){ //where in the form of y =a cos(bx) +c an
     for (let i = 0; i <= limit; i = i + 10){
         i = Math.PI * i/180 //torad
         y = a * Math.cos(b * i) + c
-        console.log("x:" + i + " " + "y:" + y)
         i = i/Math.PI * 180 //unpi
+        console.log("x:" + i + " " + "y:" + y)
     }
 }
 
 //test values
 //rangesine(1,2,3,360)
 //rangecosine(1,2,3,360)
-
 
 
 
@@ -44,15 +43,29 @@ function cosine(a ,b ,c , y){ //where in the form of y =a cos(bx) +c and limit o
 
 function drawsine(a,b,c){
     //put in a loop
-    let current = sine(a,b,c,3)
-    console.log(current[0],current[1])
-}
+    //let current = sine(a,b,c,a)
+    //console.log(current[0],current[1])
+    for (let currenty = a; currenty>= -1 *a; currenty-=0.5 ){
+        let line = ""
+        for (let currentx = 0; currentx <= 720; currentx+=10 ){
+            returned = sine(a,b,c,currenty)
+            if (((Math.round(returned[0]) % currentx) == 0) && (returned[1] == currenty)) { //TODO
+                line = line + "X"
+            } else {
+                line = line + "O"
+            }
 
+            //TODO
+
+
+        }
+        console.log(line)
+        }
+}
 function drawcosine(a,b,c){
     //put in a loop
-    let current = cosine(a,b,c,3)
+    let current = cosine(a,b,c,a)
     console.log(current[0],current[1])
 }
 
-//drawsine(3,2,1)
-//drawcosine(3,2,1)
+drawsine(1,1,0)
